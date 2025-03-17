@@ -18,7 +18,7 @@ export class UploadService {
       throw new Error('File is missing');
     }
 
-    const fileUrl = `http://localhost:5000/${this.uploadPath}/${file.filename}`;
+    const fileUrl = `https://pet-sell-buy.onrender.com/${this.uploadPath}/${file.filename}`;
 
     return { url: fileUrl, name: file.originalname };
   }
