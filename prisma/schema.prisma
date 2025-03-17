@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:Hari@1004@localhost:5432/Pet-Marketplace"
+}
+
+model User {
+  id           String  @id @default(uuid())
+  email        String  @unique
+  mobileNumber String  @unique
+  password     String
+  address      String
+  pets         Pet[]
+}
+
+model Pet {
+  id             String   @id @default(uuid())
+  type           String
+  numbers        Int
+  breed          String?
+  gender         String?
+  age            Int?
+  price          Int?
+  images         Json 
+  medicalRecords Json 
+  ownerId        String
+  interestedBy   String[] @default([])
+  owner          User @relation(fields: [ownerId], references: [id])
+}
