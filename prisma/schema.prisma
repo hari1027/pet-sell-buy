@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:Hari@1004@localhost:5432/Pet-Marketplace"
+  url      = "postgresql://neondb_owner:npg_CAwJU0c1vyXQ@ep-snowy-king-a5b8d7xr-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
 }
 
 model User {
